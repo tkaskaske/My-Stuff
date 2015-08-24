@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+//Prompt for user to enter a number.
+var input = prompt("Please enter a number");
+
+//Need to return an integer.
+input = parseInt(input);
+
+//Function method that will take the input argument.
+function recursiveFunction(input)
+{
+	
+	//If 0 will return 1.
+    if(input == 0)
+    {
+      return 1;
+    }
+   
+    var factorial = input;
+   
+    //decrement input till it gets to 2 for multiplying itself with factorial.
+    while (input-- > 2)
+    {
+    	 factorial *= input;
+    }
+    
+    //return factorial
+    return factorial; 
+   
+    
+}//end of recursion Function  */
+
+
+ //Check to confirm that user input is a number and a positive number. 
+ if(typeof input  === 'number' && input >= 0)
+ {
+	 //Function call and will output to the screen.
+     alert("Factorial: " + recursiveFunction(input));
+ }
+ else 
+ {
+	 alert("Input a valid number.");
+ }
+</script>
+
+</body>
+</html>
