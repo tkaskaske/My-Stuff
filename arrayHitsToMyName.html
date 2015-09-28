@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+/*
+ * It will push that letter and all the letters that follow it to an array, 
+ stopping when the number of letters it pushes are equal to the number of letters in your name.
+ */
+ var text = "ldkfjdstidfshalkfjtishafdfdfdftisfhadlkjltishakjlktisdfhakdfdslfds@#$J#$#$tishdaslkffdklf";
+
+ var myName = "tisha";
+ var hits = [];
+
+ for(i=0; i < text.length; i++)
+ {
+     if(text[i] === myName[0] && myName === text.substring(i,i+myName.length))
+     {
+         hits.push(text.substring(i,i+myName.length));
+     }
+ }
+
+ if(hits.length === 0)
+ console.log("Your name wasn't found.");
+ else 
+ console.log(hits);
+
+</script>

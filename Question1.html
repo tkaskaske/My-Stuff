@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+  
+  var set = [-6,0,2,8,32,-38,12,14];
+  var length = 3;
+
+  
+ var combinations = function(set, length){
+	  
+	var results = []; 
+	var subset;
+	var totalCombo = Math.pow(2, set.length);
+	
+		  
+  
+  for(var i = 0; i < totalCombo; i++)
+	{ 
+	    subset = [];
+		          
+	     var  size = set.length - 1; 
+
+	   do{
+		    if((i & (1 << size)) !== 0)
+		      subset.push(set[size]);
+		 }
+		    while(size--);
+		        
+		 if(subset.length === length)
+		    console.log(subset);
+		   
+	}//for
+	
+ }//end of combintations
+
+
+ 
+	
+	
+  function maxDifference(set)
+  {
+	  	var setSize = set.length;
+	    if (set < 1) return 0;
+
+	    var max = set[0];
+	    var min = set[0];
+	    var result = 0;
+		
+	    for(var i = 0; i < setSize; i++)
+	    {
+	        if(set[i] > max)
+	            max = set[i];
+			
+	        if (min > set[i])
+	        	min = set[i]; 
+	        
+	        var tmpResult = max - min;        
+	        if(tmpResult > result)
+	            result = tmpResult;
+	    }
+
+	    console.log("Greates difference is " + result);
+	}
+
+
+  combinations(set, length);
+  
+  maxDifference(set);
+</script>
